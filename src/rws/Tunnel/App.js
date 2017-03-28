@@ -83,12 +83,13 @@ class Tunnel extends Component {
 		var G_g = Math.floor(255 - (this.state.gas_val * 2.55));
 		var G_b = 0;
 		var G_colorHex = '#' + this.getHexColor(G_r)  + this.getHexColor(G_g)  + this.getHexColor(G_b) ;
-
+    var W=window.innerWidth
+    Font_style.fontSize=10*W/400;
     return (
       <div className="App">
         <div className="tunnel"><h1>Tunnel</h1>
-          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.light_val} topLabelStyle={Font_style} value={this.state.light_val} width={200} height={180} label="light (%)" color={L_colorHex} />
-          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.gas_val} topLabelStyle={Font_style} width={200} height={180} label="gas (%)" color={G_colorHex} />
+          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.light_val} topLabelStyle={Font_style} value={this.state.light_val} width={200*W/2000}  height={180} label="light (%)" color={L_colorHex} />
+          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.gas_val} topLabelStyle={Font_style} width={200*W/2000} height={180} label="gas (%)" color={G_colorHex} />
         </div>
       </div>
     );
