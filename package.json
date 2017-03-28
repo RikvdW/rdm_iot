@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chart.js": "^2.5.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-chart-line": "^1.0.15",
+    "react-dom": "^15.4.2",
+    "react-svg-gauge": "^1.0.4",
+    "virtual-progress-bar": "^1.0.0"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
