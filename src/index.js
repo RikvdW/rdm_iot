@@ -11,7 +11,7 @@ import './index.css';
 'use strict';
 
 ReactDOM.render(
-<Tunnel/>
+<Buoy/>
 
 ,
 
