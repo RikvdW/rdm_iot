@@ -134,9 +134,15 @@ class App extends Component {
     })
     return (
       <div className="App">
-        <p> hello world</p>
-        <div className="Bouy"><h1>Bouy</h1>
+        <div className="Bouy"><h1>Buoy</h1>
           <rcl.ChartLine data={chart}/>
+          <h2 id="head_buoy">Smart buoy</h2>
+          <p id="text_buoy">Together with Rijkswaterstaat, the ministry of infrastructure and environment, the IoT academy made a smart buoy to use in de Rotterdam Dock. <br/>
+          The smart buoy on display registers every time a boat passes by and sends this via het LoRaWan network from KPN to the IoT, so this can be displayed. <br/>
+          <br/>
+          In the smart buoy a Marvin is placed, a Lora development board made by the IoT academy, and a movement sensor. Every time the buoy shakes the Marvin registers this and saves it, every minute the Marvin sends via LoRa if a boat passed by.</p>
+
+
         </div>
         <div className="tunnel"><h1>Tunnel</h1>
           <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.light_val} topLabelStyle={Font_style} value={this.state.light_val} width={200} height={180} label="light (%)" color={L_colorHex} />

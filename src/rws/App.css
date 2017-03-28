@@ -4,6 +4,10 @@ body{
   background-repeat: no-repeat;
 }
 
+#head_buoy {
+  margin-top:20%;
+}
+
 .ReactChart {
       width: 4em;
       height: 2em;
