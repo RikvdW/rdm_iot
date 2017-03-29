@@ -1,4 +1,7 @@
-
+.App{
+  width:32vw;
+float:right;
+}
 
 #head_buoy {
   margin-top:20%;
@@ -9,9 +12,6 @@
       width: 30vw;
       height: 30vh;
   }
-.App{
-  float:right;
-}
 
 .Bouy{
   float:right;
@@ -33,11 +33,10 @@
 .App .Bouy {
   background-color: rgba(200,200, 200,0.8);
   width: 33vw;
-  height: 100vh;
+  height: 95vh;
 }
 .App .Bouy .ReactChart {
   width: 30vw;
-  height: 20vh;
 }
 .App .Bouy:hover{
   background-color: rgba(200, 200, 200,0.9);

@@ -12,9 +12,10 @@ import './index.css';
 'use strict';
 
 ReactDOM.render(
-<Water/>
-
+  <div>
+    <Nav/>
+    <Buoy/>
+  </div>
 ,
-
 document.getElementById('root')
 );

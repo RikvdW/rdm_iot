@@ -12,6 +12,12 @@ class Nav extends Component {
         <ul id="navBar">
           <li id="rws">rws</li>
           <li>Little bit</li>
+          <li>Little bit</li>
+          <li>Little bit</li>
+          <li>Little bit</li>
+          <li>Little bit</li>
+          <li id="rws">rws</li>
+          <li id="rws">rws</li>
         </ul>
       </div>
     );
