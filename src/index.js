@@ -6,12 +6,13 @@ import App from './rws/App';
 import Nav from './nav/App'
 import Tunnel from './rws/Tunnel/App'
 import Buoy from './rws/Buoy/App'
+import Water from './rws/Waterlevel/App'
 import './index.css';
 
 'use strict';
 
 ReactDOM.render(
-<Buoy/>
+<Water/>
 
 ,
 

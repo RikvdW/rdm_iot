@@ -18,8 +18,7 @@ var ws;
 var wsUri = "wss://rws-ui.eu-gb.mybluemix.net/ws/sendData";
 
 var R_data={
-    level:0,
-  ]
+    level:0
 }
 
 

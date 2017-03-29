@@ -39,8 +39,8 @@ body{
 
 .App .water {
   background-color: rgba(200, 200, 200,0.8);
-  width: 33%;
-  height: 50em;
+  width: 30vw;
+  height: 100vh;
 }
 
 .App .water:hover{
