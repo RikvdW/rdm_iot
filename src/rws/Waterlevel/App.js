@@ -6,6 +6,10 @@ var ProgressBar = require('virtual-progress-bar');
 var woble=true;
 
 
+var up_int=0;
+
+var water_int=0;
+
 var font_del ={
   fontSize: 0
 }
@@ -32,8 +36,9 @@ class Water extends Component {
       percent: 20,
      level:20
     }
-    setInterval(this.water,350);
-    setInterval(this.Update,1000);
+    water_int=setInterval(this.water,350);
+    up_int=setInterval(this.Update,1000);
+
     this.wsConnect();
  }
 
@@ -87,6 +92,11 @@ class Water extends Component {
     this.setState({level:R_data.level});
   }
 
+  componentWillUnmount(){
+    clearInterval(water_int);
+    clearInterval(up_int);
+  }
+
   render() {
     var progressBar = ProgressBar.render(React.createElement, {
       containerColor: 'rgba(150,150,150,0.3)',
@@ -95,7 +105,7 @@ class Water extends Component {
       percent: this.state.percent
     })
     return (
-      <div className="App">
+      <div className="App" onclose="ws.close()">
         <div className="water"><h1>Water level</h1>
           <div >
               <h2 style ={{fontSize:'2vw'}}> cm: </h2>

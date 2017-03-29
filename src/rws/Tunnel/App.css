@@ -1,4 +1,6 @@
+
 .App {
+  width:33vw;
   float:right;
 }
 
@@ -16,15 +18,13 @@
    font-size: 10vw;
    font-weight: 300;
    line-height: 58px;
-   margin: 0 0 58px;
  }
 
 .App .tunnel {
   background-color: rgba(200, 200, 200,0.8);
-  height: 100vh;
+  height: 95vh;
   width: 33vw;
 }
-
 
 
 .App .tunnel:hover{

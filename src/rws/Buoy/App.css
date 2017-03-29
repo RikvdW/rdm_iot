@@ -35,9 +35,11 @@ float:right;
   width: 33vw;
   height: 95vh;
 }
+
 .App .Bouy .ReactChart {
   width: 30vw;
 }
+
 .App .Bouy:hover{
   background-color: rgba(200, 200, 200,0.9);
 }

@@ -5,6 +5,8 @@ import rcl from "react-chart-line";
 
 var woble=true;
 
+var up_int=0;
+var b_int=0;
 
 var font_del ={
   fontSize: 0
@@ -18,7 +20,6 @@ var ws;
 var wsUri = "wss://rws-ui.eu-gb.mybluemix.net/ws/sendData";
 
 var R_data={
-
     Bouy_data: [
     [2,0,2,0,2,2,0,2,2,2],
     ["11:00","11:01","11:02","11:03","11:04","11:05","11:06","11:07","11:08","11:09"]
@@ -36,11 +37,10 @@ class Buoy extends Component {
        Bouy_data: [
        [2,0,2,0,2,2,0,2,2,2],
        ["11:00","11:01","11:02","11:03","11:04","11:05","11:06","11:07","11:08","11:09"]
-     ],
-     level:20
+     ]
     }
-    setInterval(this.Bouy_data,1000);
-    setInterval(this.Update,1000);
+    b_int=setInterval(this.Bouy_data,1000);
+    up_int=setInterval(this.Update,1000);
     this.wsConnect();
  }
 
@@ -82,11 +82,17 @@ class Buoy extends Component {
     this.setState({Bouy_data:R_data.Bouy_data});
   }
 
+  componentWillUnmount(){
+    clearInterval(b_int);
+    clearInterval(up_int);
+  }
+
+
   render() {
 
 
     return (
-      <div className="App">
+      <div className="App" onclose="ws.close()">
         <div className="Bouy"><h1>Buoy</h1>
           <rcl.ChartLine data={chart}/>
           <h2 id="head_buoy">Smart buoy</h2>

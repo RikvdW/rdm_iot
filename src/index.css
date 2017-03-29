@@ -1,7 +1,5 @@
-
-
 body{
   background-image: url(iot_pic.png);
-  background-size: 100% 50em;
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
 }

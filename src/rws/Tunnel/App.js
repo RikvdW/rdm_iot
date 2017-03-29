@@ -9,6 +9,8 @@ var font_del ={
 }
 
 
+var up_int=0;
+
 var Font_style ={
   fontSize: 30
 }
@@ -30,7 +32,7 @@ class Tunnel extends Component {
        light_val:0,
        gas_val:0
     }
-    setInterval(this.Update,1000);
+    up_int=setInterval(this.Update,1000);
     this.wsConnect();
  }
 
@@ -74,6 +76,11 @@ class Tunnel extends Component {
     this.setState({gas_val:R_data.gas_val});
   }
 
+  componentWillUnmount(){
+    clearInterval(up_int);
+  }
+
+
   render() {
     var L_r = Math.floor(this.state.light_val * 2.55);
 		var L_g = Math.floor(255 - (this.state.light_val * 2.55));
@@ -89,8 +96,8 @@ class Tunnel extends Component {
     return (
       <div className="App">
         <div className="tunnel"><h1>Tunnel</h1>
-          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.light_val} topLabelStyle={Font_style} value={this.state.light_val} width={250*W/2000}  height={180*W/1200} label="light (%)" color={L_colorHex} />
-          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.gas_val} topLabelStyle={Font_style} width={250*W/2000} height={180*W/1200} label="gas (%)" color={G_colorHex} />
+          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.light_val} topLabelStyle={Font_style} value={this.state.light_val} width={220*W/2000}  height={180*W/1200} label="light (%)" color={L_colorHex} />
+          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.gas_val} topLabelStyle={Font_style} width={220*W/2000} height={180*W/1200} label="gas (%)" color={G_colorHex} />
         </div>
       </div>
     );
