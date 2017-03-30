@@ -77,6 +77,7 @@ class Tunnel extends Component {
   }
 
   componentWillUnmount(){
+    ws.close();
     clearInterval(up_int);
   }
 

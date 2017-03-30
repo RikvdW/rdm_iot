@@ -90,6 +90,7 @@ class Buoy extends Component {
 
 
   componentWillUnmount(){
+    ws.close();
     clearInterval(b_int);
     clearInterval(up_int);
   }
@@ -100,7 +101,8 @@ class Buoy extends Component {
 
     return (
       <div className="App" onclose="ws.close()">
-        <div className="Bouy"><h1>Buoy</h1>
+        <div className="Bouy">
+          <h1>Buoy</h1>
           <rcl.ChartLine data={chart}/>
           <h2 id="head_buoy">Smart buoy</h2>
           <p id="text_buoy">Together with Rijkswaterstaat, the ministry of infrastructure and environment, the IoT academy made a smart buoy to use in de Rotterdam Dock. <br/>

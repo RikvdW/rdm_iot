@@ -93,6 +93,7 @@ class Water extends Component {
   }
 
   componentWillUnmount(){
+    ws.close();
     clearInterval(water_int);
     clearInterval(up_int);
   }
