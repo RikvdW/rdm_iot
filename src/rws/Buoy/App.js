@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import Chart from "chart.js";
 import rcl from "react-chart-line";
 
 var woble=true;
@@ -21,8 +22,8 @@ var wsUri = "wss://rws-ui.eu-gb.mybluemix.net/ws/sendData";
 
 var R_data={
     Bouy_data: [
-    [2,0,2,0,2,2,0,2,2,2],
-    ["11:00","11:01","11:02","11:03","11:04","11:05","11:06","11:07","11:08","11:09"]
+      [1,0,1,0,1,1,0,1,1,1],
+      ["11:00","11:01","11:02","11:03","11:04","11:05","11:06","11:07","11:08","11:09"]
   ]
 }
 
@@ -39,8 +40,7 @@ class Buoy extends Component {
        ["11:00","11:01","11:02","11:03","11:04","11:05","11:06","11:07","11:08","11:09"]
      ]
     }
-    b_int=setInterval(this.Bouy_data,1000);
-    up_int=setInterval(this.Update,1000);
+
     this.wsConnect();
  }
 
@@ -52,13 +52,13 @@ class Buoy extends Component {
 
             // parse the incoming message as a JSON object
             var data=  JSON.parse(msg.data);
-            console.log(data);
+            //console.log(data);
             if(data[0].Bouy_data)R_data.Bouy_data=data[0].Bouy_data;
 
         }
         ws.onopen = function() {
             ws.send("Open for data");
-            console.log("connected");
+            //console.log("connected");
         }
         ws.onclose = function() {
             // update the status div with the connection status
@@ -70,8 +70,8 @@ class Buoy extends Component {
 
 
  Bouy_data=(e)=>{
-
     for (var i=0,x=-10; i<10; i++,x++) {
+      //console.log(this.state.Bouy_data);
       chart.osX[i] = this.state.Bouy_data[1][i];
       chart.osY[i] = this.state.Bouy_data[0][i];
     }
@@ -80,7 +80,14 @@ class Buoy extends Component {
 
   Update=(e)=>{
     this.setState({Bouy_data:R_data.Bouy_data});
+    //console.log(this.state.Bouy_data)
   }
+
+  componentWillMount(){
+    b_int=setInterval(this.Bouy_data,1000);
+    up_int=setInterval(this.Update,1000);
+  }
+
 
   componentWillUnmount(){
     clearInterval(b_int);
