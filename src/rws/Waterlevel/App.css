@@ -1,8 +1,11 @@
 
-
 .App {
-  width:33vw;
+  width:32vw;
   float:right;
+}
+
+.water{
+  float: right;
 }
 
 .App div {

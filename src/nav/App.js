@@ -5,7 +5,7 @@ import './nav.css';
 import Tunnel from '../rws/Tunnel/App'
 import Buoy from '../rws/Buoy/App'
 import Water from '../rws/Waterlevel/App'
-
+import LittleBit from '../LittleBit/lb'
 
 var font ={
 }
@@ -29,6 +29,7 @@ class Nav extends Component {
             <Route path='/c/Buoy'   component={Buoy}/>
             <Route path='/c/Water'  component={Water}/>
             <Route path='/c/Tunnel' component={Tunnel}/>
+            <Route path='/c/Little' component={LittleBit}/>
           </div>
         </div>
       </Router>
