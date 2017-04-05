@@ -1,0 +1,88 @@
+.App{
+  width:33vw;
+float:right;
+}
+
+
+.Weer{
+  float:left;
+}
+
+
+.App *{
+   font-family: 'Lato', sans-serif;
+   font-weight: 300;
+ }
+
+.App h1 {
+   font-family: 'Lato', sans-serif;
+   font-size: 5vw;
+   font-weight: 300;
+   line-height: 58px;
+   margin: 0 0 0px;
+
+ }
+
+
+ .App h2 {
+    font-size: 3vh;
+
+  }
+
+
+.App table{
+  width: 100%
+}
+
+.App .weer {
+  background-color: rgba(200,200, 200,0.8);
+  width: 33vw;
+  height: 95vh;
+}
+
+
+.App .weer:hover{
+  background-color: rgba(200, 200, 200,0.9);
+}
+
+
+ img{
+	display: block;
+   margin: 0 auto;
+	 margin-top: 1;
+}
+
+
+.compass {
+		display: block;
+  	margin: 0 auto;
+	 	margin-top: 1;
+    border: 6px solid #ffffff; /* Light grey */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+
+#wind{
+  margin-top: 5vh;
+  width: 10vw;
+}
+
+#weather{
+  margin-top: 5vh;
+  width: 15vw;
+}
+
+.compass::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 70px;
+  background: orangered;
+  border-radius:4px;
+   position:relative;
+  left:60px;
+  top:60px;
+  transform-origin:top center;
+  transform: rotate(270deg);
+}

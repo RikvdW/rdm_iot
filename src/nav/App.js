@@ -6,6 +6,7 @@ import Tunnel from '../rws/Tunnel/App'
 import Buoy from '../rws/Buoy/App'
 import Water from '../rws/Waterlevel/App'
 import LittleBit from '../LittleBit/lb'
+import Weather from '../weather/weather'
 
 var font ={
 }
@@ -23,6 +24,7 @@ class Nav extends Component {
               <Link to='/c/Water'><li>Water level</li></Link>
               <Link to='/c/Tunnel'><li>Tunnel</li></Link>
               <Link to='/c/Little'><li>Little bit</li></Link>
+              <Link to='/c/Weather'><li>Weather</li></Link>
             </ul>
           </div>
           <div>
@@ -30,6 +32,7 @@ class Nav extends Component {
             <Route path='/c/Water'  component={Water}/>
             <Route path='/c/Tunnel' component={Tunnel}/>
             <Route path='/c/Little' component={LittleBit}/>
+            <Route path='/c/Weather' component={Weather}/>
           </div>
         </div>
       </Router>
