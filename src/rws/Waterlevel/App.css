@@ -33,6 +33,10 @@
   height: 95vh;
 }
 
+.containor{
+  
+}
+
 .App .water:hover{
   background-color: rgba(200, 200, 200,0.9);
 }

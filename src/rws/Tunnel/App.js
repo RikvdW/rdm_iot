@@ -97,8 +97,8 @@ class Tunnel extends Component {
     return (
       <div className="App">
         <div className="tunnel"><h1>Tunnel</h1>
-          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.light_val} topLabelStyle={Font_style} value={this.state.light_val} width={220*W/2000}  height={180*W/1200} label="light (%)" color={L_colorHex} />
-          <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.gas_val} topLabelStyle={Font_style} width={220*W/2000} height={180*W/1200} label="gas (%)" color={G_colorHex} />
+            <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.light_val} topLabelStyle={Font_style} value={this.state.light_val} width={220*W/2000}  height={180*W/1200} label="light (%)" color={L_colorHex} />
+            <Gauge minMaxLabelStyle ={font_del} valueLabelStyle={Font_style} value={this.state.gas_val} topLabelStyle={Font_style} width={220*W/2000} height={180*W/1200} label="gas (%)" color={G_colorHex} />
         </div>
       </div>
     );

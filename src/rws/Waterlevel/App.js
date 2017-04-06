@@ -108,11 +108,11 @@ class Water extends Component {
     return (
       <div className="App" onclose="ws.close()">
         <div className="water"><h1>Water level</h1>
-          <div >
+          <div style={{marginTop: '3vh'}}>
               <h2 style ={{fontSize:'2vw'}}> cm: </h2>
               <h1 style ={{fontSize:'3vw'}}> {this.state.level} </h1>
             </div>
-            <div style={{height: '20vh', width:'10vw', float:'rigth'}}>
+            <div style={{marginTop: '7vh', height: '20vh', width:'10vw', float:'rigth'}}>
               {progressBar}
             </div>
         </div>

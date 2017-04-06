@@ -13,7 +13,7 @@ var Font_style ={
 }
 
 var ws;
-var wsUri = "wss://rws-ui.eu-gb.mybluemix.net/ws/sendData";
+var wsUri = "wss://banana-rdm.eu-gb.mybluemix.net/ws/little";
 
 var R_data={
     Little : 0
@@ -37,7 +37,7 @@ class LittleBit extends Component {
 
             // parse the incoming message as a JSON object
             var data=  JSON.parse(msg.data);
-            //console.log(data);
+            console.log(data);
             if(data.Little)R_data.Little=data.Little;
 
         }
