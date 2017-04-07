@@ -7,15 +7,7 @@ import cloud from './cloud.ico'
 
 var up_int=0;
 
-var font_del ={
-  fontSize: 0
-}
 
-var Font_style ={
-  fontSize: 30
-}
-
-var ws;
 var wsUri = "wss://rws-ui.eu-gb.mybluemix.net/ws/sendWeather";
 
 var R_data={
@@ -61,7 +53,7 @@ class Weather extends Component {
 
   Update=(e)=>{
     this.setState({weather:R_data});
-    if(this.state.weather.weather==1){
+    if(this.state.weather.weather===1){
       this.setState({pic:cloud})
     }
   }
