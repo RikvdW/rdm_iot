@@ -1,22 +1,19 @@
 
-
-
 .App {
-  margin-top: 1%;
-  margin-bottom: 1%;
-  margin-left:1%;
-  margin-right:0;
-  position: relative;
-  font-size: 0;
+  width:32vw;
+  float:right;
+}
+
+.water{
+  float: right;
 }
 
 .App div {
   text-align: center;
   display: inline-block;
-  width: 100px;
+  width: 10vw;
   font-size: 12px;
   vertical-align:top;
-
 }
 
 .App *{
@@ -32,10 +29,10 @@
 
 .App .water {
   background-color: rgba(200, 200, 200,0.8);
-  width: 30vw;
+  width: 33vw;
   height: 100vh;
 }
 
-.App .water:hover{
-  background-color: rgba(200, 200, 200,0.9);
+.containor{
+
 }

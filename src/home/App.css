@@ -3,17 +3,8 @@
 float:right;
 }
 
-#head_buoy {
-  margin-top:20%;
-}
 
-
-.ReactChart {
-      width: 30vw;
-      height: 30vh;
-  }
-
-.Bouy{
+.Little{
   float:right;
 }
 
@@ -27,14 +18,22 @@ float:right;
    font-family: 'Lato', sans-serif;
    font-size: 54px;
    font-weight: 300;
+   line-height: 58px;
+   margin: 0 0 58px;
+   margin-bottom: 2vh;
  }
-.App .Bouy {
+
+ .App h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 58px;
+    margin-top: 2vh;
+
+  }
+
+.App .Home {
   background-color: rgba(200,200, 200,0.8);
   width: 33vw;
   height: 100vh;
-}
-
-.App .Bouy .ReactChart {
-  margin-top: 7vh;
-  width: 30vw;
 }

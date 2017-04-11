@@ -4,7 +4,7 @@
   float:right;
 }
 
-.app .tunnel{
+.tunnel{
   float:right;
 }
 
@@ -22,11 +22,6 @@
 
 .App .tunnel {
   background-color: rgba(200, 200, 200,0.8);
-  height: 95vh;
+  height: 100vh;
   width: 33vw;
-}
-
-
-.App .tunnel:hover{
-  background-color: rgba(200, 200, 200,0.9);
 }
