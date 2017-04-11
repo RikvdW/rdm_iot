@@ -4,6 +4,7 @@ import './App.css';
 import cloud_with_rain from './cloud_with_rain.ico';
 import wind from './wind.ico';
 import cloud from './cloud.ico'
+import sun_with_cloud from './sun_with_cloud.png';
 
 var up_int=0;
 
@@ -34,7 +35,7 @@ class Weather extends Component {
 
             // parse the incoming message as a JSON object
             var data=  JSON.parse(msg.data);
-            //console.log(data);
+            console.log(data);
             if(data.weather)R_data=data.weather;
 
 
@@ -54,7 +55,11 @@ class Weather extends Component {
   Update=(e)=>{
     this.setState({weather:R_data});
     if(this.state.weather.weather===1){
-      this.setState({pic:cloud})
+      this.setState({pic:cloud});
+    } else if(this.state.weather.weather===2){
+      this.setState({pic:sun_with_cloud});
+    }else {
+      this.setState({pic:cloud_with_rain});
     }
   }
   componentWillMount(){
