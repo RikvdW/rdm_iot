@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import {BrowserRouter as Router, Link, Route, hashHistory} from 'react-router-dom'
+import React, { Component,PropTypes } from 'react';
+import {BrowserRouter as Router, Link, Route,withRouter } from 'react-router-dom'
+import { browserHistory } from 'react-router'
 import './nav.css';
 
 import Home from '../home/home'
@@ -10,17 +11,71 @@ import LittleBit from '../LittleBit/lb'
 import Weather from '../weather/weather'
 
 
-var font ={
-}
+var Change_text="pause";
 
-var i =0;
+var counter = 0;
+
+var page=[
+  '/home',
+  '/c/Buoy',
+  '/c/Water',
+  '/c/Tunnel',
+  '/c/Little',
+  '/c/Weather'
+]
+
+var int_ch=0;
+
 class Nav extends Component {
+
+
+
+  constructor(props) {
+    super();
+    this.change = this.change.bind(this);
+    this.state = {
+       change : 0
+    }
+
+  }
+
+  componentWillMount(){
+    int_ch=setInterval(this.change,20000);
+    this.setState({change:1});
+  }
+
+
+
+
+  change=(e)=> {
+    //e.preventDefault();
+    console.log("test")
+    this.props.history.push(page[counter]);
+    if(counter==page.length-1){
+      counter=0;
+    }else{
+      counter++;
+    }
+  }
+
+  setChange=(e)=>{
+    if(this.state.change==0){
+      int_ch=setInterval(this.change,20000);
+      this.setState({change:1});
+      Change_text="pause"
+    }else{
+      clearInterval(int_ch);
+      this.setState({change:0});
+      Change_text="play"
+    }
+  }
+
   render() {
     return (
       <div>
-      <Router history={hashHistory}>
         <div>
           <div className="nav">
+
             <ul id="navBar">
               <Link to='/home'><li>Home</li></Link>
               <Link to='/c/Buoy'><li>Buoy</li></Link>
@@ -38,13 +93,18 @@ class Nav extends Component {
             <Route path='/c/Little'   component={LittleBit}/>
             <Route path='/c/Weather'  component={Weather}/>
           </div>
+
         </div>
-      </Router>
+        <input type="button" onClick={this.setChange} value={Change_text} />
       </div>
 
 
     );
   }
 }
+console.log(Nav.PropTypes);
+Nav.props = {
+  router: PropTypes.object
+};
 
 export default Nav;

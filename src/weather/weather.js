@@ -8,7 +8,7 @@ import sun_with_cloud from './sun_with_cloud.png';
 
 var up_int=0;
 
-
+var ws;
 var wsUri = "wss://rws-ui.eu-gb.mybluemix.net/ws/sendWeather";
 
 var R_data={
@@ -29,7 +29,7 @@ class Weather extends Component {
 
  wsConnect=(e)=>{
         console.log("connect",wsUri);
-        var ws = new WebSocket(wsUri);
+        ws = new WebSocket(wsUri);
         //var line = "";    // either uncomment this for a building list of messages
         ws.onmessage = function(msg) {
 
@@ -66,7 +66,7 @@ class Weather extends Component {
     up_int=setInterval(this.Update,1000);
   }
   componentWillUnmount(){
-
+    ws.close();
     clearInterval(up_int);
   }
   render() {

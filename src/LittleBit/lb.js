@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
+
 
 
 var up_int=0;
@@ -31,7 +33,7 @@ class LittleBit extends Component {
 
  wsConnect=(e)=>{
         console.log("connect",wsUri);
-        var ws = new WebSocket(wsUri);
+        ws = new WebSocket(wsUri);
         //var line = "";    // either uncomment this for a building list of messages
         ws.onmessage = function(msg) {
 
@@ -57,6 +59,8 @@ class LittleBit extends Component {
 
   Update=(e)=>{
     this.setState({Little:R_data.Little});
+    console.log(this.props);
+    this.props.history.push('/c/Water');
   }
 
   componentWillMount(){
@@ -65,7 +69,7 @@ class LittleBit extends Component {
 
 
   componentWillUnmount(){
-
+    ws.close();
     clearInterval(up_int);
   }
 
