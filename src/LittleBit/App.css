@@ -35,10 +35,5 @@ float:right;
 .App .Little {
   background-color: rgba(200,200, 200,0.8);
   width: 33vw;
-  height: 95vh;
-}
-
-
-.App .Little:hover{
-  background-color: rgba(200, 200, 200,0.9);
+  height: 100vh;
 }

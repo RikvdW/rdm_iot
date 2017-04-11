@@ -31,14 +31,10 @@ float:right;
 .App .Bouy {
   background-color: rgba(200,200, 200,0.8);
   width: 33vw;
-  height: 95vh;
+  height: 100vh;
 }
 
 .App .Bouy .ReactChart {
   margin-top: 7vh;
   width: 30vw;
-}
-
-.App .Bouy:hover{
-  background-color: rgba(200, 200, 200,0.9);
 }

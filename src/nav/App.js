@@ -3,6 +3,9 @@ import {BrowserRouter as Router, Link, Route,withRouter } from 'react-router-dom
 import { browserHistory } from 'react-router'
 import './nav.css';
 
+import play from './img/play.png'
+import pause from './img/pause.png'
+
 import Home from '../home/home'
 import Tunnel from '../rws/Tunnel/App'
 import Buoy from '../rws/Buoy/App'
@@ -11,7 +14,7 @@ import LittleBit from '../LittleBit/lb'
 import Weather from '../weather/weather'
 
 
-var Change_text="pause";
+
 
 var counter = 0;
 
@@ -34,7 +37,8 @@ class Nav extends Component {
     super();
     this.change = this.change.bind(this);
     this.state = {
-       change : 0
+       change : 0,
+       chage_img:pause
     }
 
   }
@@ -59,23 +63,30 @@ class Nav extends Component {
   }
 
   setChange=(e)=>{
-    if(this.state.change==0){
+    if(this.state.change===0){
       int_ch=setInterval(this.change,20000);
       this.setState({change:1});
-      Change_text="pause"
+      this.setState({chage_img:pause});
     }else{
       clearInterval(int_ch);
       this.setState({change:0});
-      Change_text="play"
+      console.log("hello")
+      this.setState({chage_img:play});
     }
   }
 
   render() {
     return (
       <div>
-        <div>
-          <div className="nav">
 
+        <div>
+
+          <div className="nav">
+          <header>
+            <h1>IoT <span id="orange">Academy</span> Rotterdam</h1>
+            <h3> powered by IBM Watson IoT</h3>
+            <button onClick={this.setChange}><img src={this.state.chage_img}/></button>
+          </header>
             <ul id="navBar">
               <Link to='/home'><li>Home</li></Link>
               <Link to='/c/Buoy'><li>Buoy</li></Link>
@@ -95,7 +106,6 @@ class Nav extends Component {
           </div>
 
         </div>
-        <input type="button" onClick={this.setChange} value={Change_text} />
       </div>
 
 

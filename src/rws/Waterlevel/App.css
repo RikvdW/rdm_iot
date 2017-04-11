@@ -30,13 +30,9 @@
 .App .water {
   background-color: rgba(200, 200, 200,0.8);
   width: 33vw;
-  height: 95vh;
+  height: 100vh;
 }
 
 .containor{
 
-}
-
-.App .water:hover{
-  background-color: rgba(200, 200, 200,0.9);
 }
