@@ -1,8 +1,11 @@
 {
-  "main.css": "static/css/main.7991ffe0.css",
-  "main.css.map": "static/css/main.7991ffe0.css.map",
-  "main.js": "static/js/main.b203fd54.js",
-  "main.js.map": "static/js/main.b203fd54.js.map",
-  "static/media/iot_pic.png": "static/media/iot_pic.4645f605.png",
+  "main.css": "static/css/main.dcb5ecba.css",
+  "main.css.map": "static/css/main.dcb5ecba.css.map",
+  "main.js": "static/js/main.eaefa1a7.js",
+  "main.js.map": "static/js/main.eaefa1a7.js.map",
+  "static/media/buoy.png": "static/media/buoy.bb490231.png",
+  "static/media/iot_pic.png": "static/media/iot_pic.3684ad70.png",
+  "static/media/level.png": "static/media/level.be96e679.png",
+  "static/media/tunnel.png": "static/media/tunnel.a08e8a97.png",
   "static/media/wind.ico": "static/media/wind.81d71cb4.ico"
 }
