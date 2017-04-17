@@ -35,7 +35,10 @@ float:right;
 }
 
 .App .weer {
-  background-color: rgba(200,200, 200,0.8);
+  background: -webkit-linear-gradient(right, #859aa1, #717E82); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient( left, #859aa1, #717E82); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient( left, #859aa1, #717E82); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to  left, #859aa1, #717E82); /* Standard syntax (must be last) */
   width: 33vw;
   height: 100vh;
 }

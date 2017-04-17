@@ -48,28 +48,25 @@ header h3{
 
 
 .nav{
+  overflow: scroll;
+  margin-top: 7vh;
   width:calc(100% - 33vw);
   float:left;
+  background: white;
+  height: 86vh;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #f1f1f1;
-}
-
- li {
-    display: inline-block;
-    color: #000;
-    padding: 2em;
-    text-decoration: none;
-
+#nav{
+  padding-top: 5vh;
+  padding-left: 5vw;
+  fill: rgba(255, 158, 44, .5);
+  stroke:black;
+  stroke-width: 1px;
 
 }
 
-/* Change the link color on hover */
- li:hover {
-    background-color: #555;
-    color: white;
+#D9{
+  background-color: red;
+  -webkit-mask-image: url(./img/buoy.png);
+  mask-image: url(./img/buoy.png);
 }
