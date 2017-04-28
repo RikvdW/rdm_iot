@@ -24,13 +24,21 @@
     "gulp": "^3.9.1",
     "react-scripts": "0.9.5"
   },
+  "proxy": "http://localhost:8081",
   "scripts": {
-    "start": "react-scripts start",
+    "bluemix": "babel-node index.js",
+    "start": "concurrently \"PORT=8080 react-scripts start\" \"PORT=8081 babel-watch index.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build&&gh-pages -d build"
   },
+  "babel": {
+  "presets": [
+    "es2015",
+    "stage-2"
+  ]
+},
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "repository": {
@@ -46,5 +54,5 @@
   "bugs": {
     "url": "https://github.com/RikvdW/rdm_iot/issues"
   },
-  "homepage": "https://github.com/rdm_iot"
+  "homepage": "https://github.com/"
 }
