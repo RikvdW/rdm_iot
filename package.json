@@ -9,12 +9,16 @@
     "chart.js": "^2.5.0",
     "compression": "^1.6.2",
     "express": "^4.15.2",
-    "react": "^15.4.2",
+    "react": "^15.5.4",
     "react-chart-line": "^1.0.15",
     "react-dom": "^15.4.2",
+    "react-native-svg": "^5.1.8",
+    "react-native-svg-uri": "^1.2.0",
     "react-router-dom": "^4.0.0",
+    "react-svg": "^2.1.19",
     "react-svg-gauge": "^1.0.4",
     "surge": "^0.19.0",
+    "svg-react": "^1.0.9",
     "virtual-progress-bar": "^1.0.0"
   },
   "devDependencies": {
@@ -34,11 +38,11 @@
     "deploy": "npm run build&&gh-pages -d build"
   },
   "babel": {
-  "presets": [
-    "es2015",
-    "stage-2"
-  ]
-},
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "repository": {

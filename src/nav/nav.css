@@ -56,6 +56,25 @@ header h3{
   height: 86vh;
 }
 
+#plan{
+
+  margin-top:5vh;
+  width: 60vw;
+}
+
+#plan_pic{
+  width: inherit;
+  position: absolute;
+
+}
+
+#label{
+  width: 2vw;
+  position: absolute;
+  top: calc(10vw - 5vh);
+  left: 40vw;
+}
+
 #nav{
   height: calc(78.5vh - 5vw);
   border-left: 1px solid black;
@@ -69,8 +88,34 @@ header h3{
 
 }
 
-#D9{
-  background-color: red;
-  -webkit-mask-image: url(./img/buoy.png);
-  mask-image: url(./img/buoy.png);
+#svg_container{
+  display: block;
+  margin: auto;
+  width: calc(55vw);
+  height: calc(55vw / 2);
+}
+#svgPic{
+  width: calc(55vw);
+  height: auto;
+}
+
+.label{
+    display: block;
+  width: calc(2vw);
+  height: auto;
+}
+
+#label_1{
+  x: 29.7vw;
+  y: 0.5vw;
+}
+
+#label_2{
+  x: 32.6vw;
+  y: 0.5vw;
+}
+
+#label_3{
+  x: 31.2vw;
+  y: 3.5vw;
 }
