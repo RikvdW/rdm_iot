@@ -7,10 +7,14 @@ import './nav.css';
 
 import play from './img/play.png'
 import pause from './img/pause.png'
-import plan from './img/plattegrond.png'
-import label  from './img/label.png'
-import label_u  from './img/label_u.png'
-import label_b from './img/label_b.png'
+
+import buoy_ic from './img/ic/buoy.png'
+import level_ic from './img/ic/water.png'
+import tunnel_ic from './img/ic/tunnel.png'
+import weather_ic from './img/ic/weather.png'
+import home_ic from './img/ic/home.png'
+import cut_ic from './img/ic/bestek.png'
+
 
 import buoy from './img/buoy.png'
 import level from './img/level.png'
@@ -36,6 +40,15 @@ var page=[
  '/c/Weather'
 ]
 
+var cover_img=[
+  null,
+  buoy,
+  tunnel,
+  level,
+  null,
+  null
+]
+
 var int_ch=0;
 
 class Nav extends Component {
@@ -45,18 +58,12 @@ class Nav extends Component {
  constructor(props) {
   super();
   this.change = this.change.bind(this);
-  this.change_B = this.change_B.bind(this);
   this.state = {
     change : 0,
     chage_img:pause,
-    Active: 0,
-    B_L: [label,
-          label,
-          label,
-          label_u,
-          label,
-          label]
+    cover: null
   }
+
 
  }
 
@@ -66,15 +73,6 @@ class Nav extends Component {
  }
 
 
-
-setCounter= item =>{
-  counter=item;
-  this.state.B_L[counter]=label_b;
-  this.state.B_L[this.state.Active]=label;
-  this.setState({B_L:this.state.B_L});
-  this.setState({Active:item});
-}
-
  change=(e)=> {
   //e.preventDefault();
   if(counter==page.length-1){
@@ -83,25 +81,14 @@ setCounter= item =>{
    counter++;
   }
   this.props.history.push(page[counter]);
-  this.state.B_L[counter]=label_b;
-  this.state.B_L[this.state.Active]=label;
-  this.setState({B_L:this.state.B_L})
-  this.setState({Active:counter})
-
+  this.setState({cover:cover_img[counter]});
  }
 
-change_B= item => {
-  if(this.state.Active!=item){
-    if(this.state.B_L[item]==label){
-      this.state.B_L[item]=label_b;
-      this.setState({B_L:this.state.B_L})
-    } else{
-      this.state.B_L[item]=label;
-      this.setState({B_L:this.state.B_L})
-    }
-  }
-  console.log(counter)
-}
+ setCounter=(item)=>{
+   counter=item;
+   this.setState({cover:cover_img[counter]});
+ }
+
 
  setChange=(e)=>{
     if(this.state.change===0){
@@ -119,19 +106,43 @@ change_B= item => {
   return (
    <div>
      <div className="nav">
-     <header>
-      <h1>IoT <span id="orange">Academy</span> Rotterdam</h1>
-      <h3> powered by IBM Watson IoT</h3>
-      <button onClick={this.setChange}><img src={this.state.chage_img}/></button>
-      <svg id="svg_container" xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
-            <image id="svgPic" xlinkHref={plan} x={0} y={0}/>
-            <Link to='/c/Buoy' onClick={() => this.setCounter(1)}><image onMouseLeave={() => this.change_B(1)} onMouseEnter={() => this.change_B(1)} className="label" id="label_1" xlinkHref={this.state.B_L[1]} /></Link>
-            <Link to='/c/Tunnel' onClick={() => this.setCounter(2)}><image onMouseLeave={() => this.change_B(2)} onMouseEnter={() => this.change_B(2)} className="label" id="label_2" xlinkHref={this.state.B_L[2]}/></Link>
-            <Link to='/c/Water' onClick={() => this.setCounter(3)}><image onMouseLeave={() => this.change_B(3)} onMouseEnter={() => this.change_B(3)} className="label" id="label_3" xlinkHref={this.state.B_L[3]}/></Link>
-      </svg>
-     </header>
-     <plan/>
+       <header>
+        <h1>IoT <span id="orange">Academy</span> Rotterdam</h1>
+        <h3> powered by IBM Watson IoT</h3>
+        <button onClick={this.setChange}><img src={this.state.chage_img}/></button>
+
+       </header>
+       <div id="container">
+         <div id="menu">
+           <ul>
+             <Link to="/home" onClick={()=>this.setCounter(0)}><li><img src={home_ic}/></li></Link>
+             <Link to="/c/Buoy" onClick={()=>this.setCounter(1)}><li><img src={buoy_ic}/></li></Link>
+             <Link to="/c/Tunnel" onClick={()=>this.setCounter(2)}><li><img src={tunnel_ic}/></li></Link>
+              <Link to="/c/Water" onClick={()=>this.setCounter(3)}><li><img src={level_ic}/></li></Link>
+              <Link to="/c/Little" onClick={()=>this.setCounter(4)}><li><img src={cut_ic}/></li></Link>
+             <Link to="/c/Weather" onClick={()=>this.setCounter(5)}> <li><img src={weather_ic}/></li></Link>
+           </ul>
+         </div>
+         <div id="pic">
+          <img id="pic_img" src={this.state.cover}/>
+         </div>
+         <div id="text">
+         <p>“Hope” is the thing with feathers -<br/>
+        That perches in the soul -<br/>
+        And sings the tune without the words -<br/>
+        And never stops - at all -<br/>
+<br/>
+        And sweetest - in the Gale - is heard -<br/>
+        And sore must be the storm -<br/>
+        That could abash the little Bird<br/>
+        That kept so many warm -<br/>
+<br/>
+        I’ve heard it in the chillest land -<br/>
+        And on the strangest Sea -<br/>
+        Yet - never - in Extremity,<br/>
+        It asked a crumb - of me.</p>
+         </div>
+       </div>
      </div>
      <div>
       <Route path='/home'    component={Home}/>
