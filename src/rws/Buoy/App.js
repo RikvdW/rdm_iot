@@ -97,16 +97,12 @@ class Buoy extends Component {
 
 
   render() {
-
-
     return (
       <div className="App" onclose="ws.close()">
         <div className="Bouy">
           <h1>Buoy</h1>
           <rcl.ChartLine data={chart}/>
-          <p>
-          Using motion sensors to detect collisions with a buoy. Measurements are used to trigger maintenance.
-          </p>
+        
         </div>
       </div>
     );

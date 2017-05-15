@@ -112,10 +112,9 @@ ul {
 }
 
 li {
-    height: 8vw;
-    padding: 1vw;
-    line-height: 8vw;
-
+  height: 8vw;
+  padding: 1vw;
+  line-height: 8vw;
 }
 
 li:hover {
@@ -143,15 +142,11 @@ li:hover {
 }
 
 
-#pic::-webkit-scrollbar {
-    width: 0 !important
-
-}
 
 
 #text{
-    overflow: hidden;
-    float: left;
+  overflow: hidden;
+  float: left;
   margin: 0;
   padding: 0;
   position:static;

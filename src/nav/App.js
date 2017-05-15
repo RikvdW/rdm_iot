@@ -20,6 +20,8 @@ import buoy from './img/buoy.png'
 import level from './img/level.png'
 import tunnel from './img/tunnel.png'
 import sun from '../weather/sun.png'
+import iot_pic from './img/iot_pic.png'
+import weather_pic from './img/weather_pic.jpg'
 
 import Home from '../home/home'
 import Tunnel from '../rws/Tunnel/App'
@@ -27,6 +29,9 @@ import Buoy from '../rws/Buoy/App'
 import Water from '../rws/Waterlevel/App'
 import LittleBit from '../LittleBit/lb'
 import Weather from '../weather/weather'
+import Info from './text'
+
+
 
 
 var counter = 0;
@@ -35,17 +40,18 @@ var page=[
  '/home',
  '/c/Buoy',
  '/c/Tunnel',
-  '/c/Water',
- '/c/Little',
- '/c/Weather'
+'/c/Water',
+'/c/Weather'
+ //'/c/Little'
+
 ]
 
 var cover_img=[
-  null,
+  iot_pic,
   buoy,
   tunnel,
   level,
-  null,
+  weather_pic,
   null
 ]
 
@@ -63,8 +69,6 @@ class Nav extends Component {
     chage_img:pause,
     cover: null
   }
-
-
  }
 
  componentWillMount(){
@@ -115,33 +119,20 @@ class Nav extends Component {
        <div id="container">
          <div id="menu">
            <ul>
-             <Link to="/home" onClick={()=>this.setCounter(0)}><li><img src={home_ic}/></li></Link>
-             <Link to="/c/Buoy" onClick={()=>this.setCounter(1)}><li><img src={buoy_ic}/></li></Link>
-             <Link to="/c/Tunnel" onClick={()=>this.setCounter(2)}><li><img src={tunnel_ic}/></li></Link>
-              <Link to="/c/Water" onClick={()=>this.setCounter(3)}><li><img src={level_ic}/></li></Link>
-              <Link to="/c/Little" onClick={()=>this.setCounter(4)}><li><img src={cut_ic}/></li></Link>
-             <Link to="/c/Weather" onClick={()=>this.setCounter(5)}> <li><img src={weather_ic}/></li></Link>
+            <Link to="/home" onClick={()=>this.setCounter(0)}><li><img src={home_ic}/></li></Link>
+            <Link to="/c/Buoy" onClick={()=>this.setCounter(1)}><li><img src={buoy_ic}/></li></Link>
+            <Link to="/c/Tunnel" onClick={()=>this.setCounter(2)}><li><img src={tunnel_ic}/></li></Link>
+            <Link to="/c/Water" onClick={()=>this.setCounter(3)}><li><img src={level_ic}/></li></Link>
+            <Link to="/c/Weather" onClick={()=>this.setCounter(4)}><li><img src={weather_ic}/></li></Link>
+
            </ul>
          </div>
          <div id="pic">
           <img id="pic_img" src={this.state.cover}/>
          </div>
-         <div id="text">
-         <p>“Hope” is the thing with feathers -<br/>
-        That perches in the soul -<br/>
-        And sings the tune without the words -<br/>
-        And never stops - at all -<br/>
-<br/>
-        And sweetest - in the Gale - is heard -<br/>
-        And sore must be the storm -<br/>
-        That could abash the little Bird<br/>
-        That kept so many warm -<br/>
-<br/>
-        I’ve heard it in the chillest land -<br/>
-        And on the strangest Sea -<br/>
-        Yet - never - in Extremity,<br/>
-        It asked a crumb - of me.</p>
-         </div>
+
+           <Info Count={counter}/>
+
        </div>
      </div>
      <div>
@@ -149,19 +140,20 @@ class Nav extends Component {
       <Route path='/c/Buoy'   component={Buoy}/>
       <Route path='/c/Water'  component={Water}/>
       <Route path='/c/Tunnel'  component={Tunnel}/>
-      <Route path='/c/Little'  component={LittleBit}/>
       <Route path='/c/Weather' component={Weather}/>
-     </div>
+      <Route path='/c/Little'  component={LittleBit}/>
 
+     </div>
    </div>
 
 
   );
  }
 }
-console.log(Nav.PropTypes);
-Nav.props = {
- router: PropTypes.object
-};
+
+
 
 export default Nav;
+
+
+    //<Link to="/c/Little" onClick={()=>this.setCounter(5)}> <li><img src={cut_ic}/></li></Link>

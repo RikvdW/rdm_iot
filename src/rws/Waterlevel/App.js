@@ -115,7 +115,7 @@ class Water extends Component {
             <div style={{marginTop: '7vh', height: '20vh', width:'10vw', float:'rigth'}}>
               {progressBar}
             </div>
-            <p>Using infrared distance sensor the water height in a canal is measured. Values are used to control water pumps in the field.</p>
+          
           </div>
         </div>
 
