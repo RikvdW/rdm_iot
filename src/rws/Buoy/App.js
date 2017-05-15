@@ -97,14 +97,12 @@ class Buoy extends Component {
 
 
   render() {
-
-
     return (
       <div className="App" onclose="ws.close()">
         <div className="Bouy">
           <h1>Buoy</h1>
           <rcl.ChartLine data={chart}/>
-
+        
         </div>
       </div>
     );

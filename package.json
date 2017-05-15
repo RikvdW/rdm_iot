@@ -3,25 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "chart.js": "^2.5.0",
-    "react": "^15.4.2",
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "react": "^15.5.4",
     "react-chart-line": "^1.0.15",
     "react-dom": "^15.4.2",
+    "react-native-svg": "^5.1.8",
+    "react-native-svg-uri": "^1.2.0",
     "react-router-dom": "^4.0.0",
+    "react-svg": "^2.1.19",
     "react-svg-gauge": "^1.0.4",
     "surge": "^0.19.0",
+    "svg-react": "^1.0.9",
     "virtual-progress-bar": "^1.0.0"
   },
   "devDependencies": {
+    "babel-watch": "^2.0.6",
+    "concurrently": "^3.4.0",
     "gh-pages": "^0.12.0",
+    "gulp": "^3.9.1",
     "react-scripts": "0.9.5"
   },
+  "proxy": "http://localhost:8081",
   "scripts": {
-    "start": "react-scripts start",
+    "bluemix": "babel-node index.js",
+    "start": "concurrently \"PORT=8080 react-scripts start\" \"PORT=8081 babel-watch index.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build&&gh-pages -d build"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
@@ -38,5 +58,5 @@
   "bugs": {
     "url": "https://github.com/RikvdW/rdm_iot/issues"
   },
-  "homepage": "https://github.com/rdm_iot"
+  "homepage": "https://github.com/"
 }

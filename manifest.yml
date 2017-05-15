@@ -1,0 +1,7 @@
+---
+applications:
+- name: RDM_iot
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  command: npm run bluemix
+  disk_quota: 256MB
+  memory: 128MB

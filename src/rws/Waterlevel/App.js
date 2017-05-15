@@ -115,8 +115,10 @@ class Water extends Component {
             <div style={{marginTop: '7vh', height: '20vh', width:'10vw', float:'rigth'}}>
               {progressBar}
             </div>
+          
+          </div>
         </div>
-      </div>
+
     );
   }
 }
