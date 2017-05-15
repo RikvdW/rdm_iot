@@ -72,6 +72,8 @@ class Nav extends Component {
  }
 
  componentWillMount(){
+  this.setCounter(0);
+  this.props.history.push(page[counter]);
   int_ch=setInterval(this.change,20000);
   this.setState({change:1});
  }
